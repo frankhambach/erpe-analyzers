@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Description>Provides a set of analyzers for Erpe projects.</Description>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <LangVersion>preview</LangVersion>
+    <NeutralLanguage>en-US</NeutralLanguage>
+
+    <Nullable>enable</Nullable>
+    <AnalysisLevel>latest-all</AnalysisLevel>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="tools/stylecop.json" Link="stylecop.json" />
+    <GlobalAnalyzerConfigFiles Include="tools/Erpe.Analyzers.globalconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="build/**" Pack="True" PackagePath="" />
+    <None Update="lib/netstandard2.0/_._" Pack="True" PackagePath="" />
+    <None Update="tools/stylecop.json" Pack="True" PackagePath="" />
+    <None Update="tools/Erpe.Analyzers.globalconfig" Pack="True" PackagePath="" />
+    <None Include="../README.md" Pack="true" PackagePath="/" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.11.0" PrivateAssets="none" />
+    <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers" Version="17.11.20" PrivateAssets="none" />
+    <PackageReference Include="SecurityCodeScan.VS2019" Version="5.6.7" PrivateAssets="none" />
+    <PackageReference Include="SonarAnalyzer.CSharp" Version="9.32.0.97167" PrivateAssets="none" />
+    <PackageReference Include="StyleCop.Analyzers.Unstable" Version="1.2.0.556" PrivateAssets="none" />
+  </ItemGroup>
+
+</Project>
