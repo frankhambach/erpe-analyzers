@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>preview</LangVersion>
+    <NeutralLanguage>en-US</NeutralLanguage>
+
+    <Nullable>enable</Nullable>
+    <AnalysisLevel>latest-all</AnalysisLevel>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+
+    <Authors>Frank Hambach</Authors>
+    <Description>Bundles essential code analysis tools and enforces strict code quality, style, and security standards to maintain consistency across personal projects.</Description>
+    <Copyright>Copyright (c) Frank Hambach 2024</Copyright>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageTags>analyzer;diagnostic</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="build/**" Pack="true" PackagePath="" />
+    <None Update="lib/netstandard2.0/_._" Pack="true" PackagePath="" />
+    <None Update="tools/stylecop.json" Pack="true" PackagePath="" />
+    <None Update="tools/Erpe.Analyzers.globalconfig" Pack="true" PackagePath="" />
+    <None Include="../icon.png" Pack="true" PackagePath="/" />
+    <None Include="../README.md" Pack="true" PackagePath="/" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.11.0" PrivateAssets="none" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers" Version="17.12.19" PrivateAssets="none" />
+    <PackageReference Include="SecurityCodeScan.VS2019" Version="5.6.7" PrivateAssets="none" />
+    <PackageReference Include="SonarAnalyzer.CSharp" Version="10.5.0.109200" PrivateAssets="none" />
+    <PackageReference Include="StyleCop.Analyzers.Unstable" Version="1.2.0.556" PrivateAssets="none" />
+  </ItemGroup>
+
+</Project>
